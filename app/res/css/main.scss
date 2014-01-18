@@ -1,0 +1,73 @@
+/* ... */
+html, body {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+}
+
+body {
+  background: url('../img/backgrounds/clean_textile.png') repeat;
+}
+
+.content {
+  height: 100%;
+  display: table;
+  margin: 0 auto;
+  .content-header {
+    display: table-row;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+    height: 20px;
+    padding-bottom: 5px;
+    color: #428bca;
+    font-size: 50px;
+    font-weight: 900;
+    .title-hacker {
+      color: grey;
+    }
+    .title-hacker-chat {
+      color: #2F2F2F;
+    }
+  }
+  .content-main {
+    display: table-row;
+    vertical-align: middle;
+  }
+}
+
+.content-main {
+  .content-splash {
+    margin: 0 auto;
+    text-align: center;
+    .content-splash-text {
+      color: #2F2F2F;
+      font-size: 18px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .content-splash-login {
+      button {
+        padding-top: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      label {
+        padding: 5px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      input {
+        min-width: 400px;
+      }
+      .splash-login-button {
+        display: inline-block;
+        margin-top: 10px;
+      }
+    }
+    .splash-error {
+      color:red;
+    }
+  }
+}
