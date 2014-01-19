@@ -108,6 +108,7 @@ body {
       min-width: 1680px;
       text-align: left;
       display: inline-block;
+      border: 1px solid black;
     }
     .form-control-submit {
       display: inline-block;
@@ -182,7 +183,7 @@ body {
       .chat-default-profile-pic {
         height: 100px;
         width: 100px;
-        background-image: url('../img/profile-picture.jpg');
+        background-image: url('../img/profile-picture0.jpg');
         background-repeat: no-repeat;
         background-size: contain;
         border: 1px solid black;
@@ -197,6 +198,10 @@ body {
       }
       .chat-message-name {
         font-weight: 900;
+      }
+      .chat-message-text {
+        margin-left: 107px;
+        margin-right: 5px;
       }
     }
   }
