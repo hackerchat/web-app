@@ -63,7 +63,8 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>/',
             dest: '<%= yeoman.tmp %>/',
             src: [
-              'res/css/bootstrap*'
+              'res/css/bootstrap*',
+              'res/css/default.css'
             ]
           }
         ]
@@ -87,7 +88,9 @@ module.exports = function(grunt) {
             cwd: '<%= yeoman.app %>/',
             dest: '<%= yeoman.tmp %>/',
             src: [
-              'res/img/**/*.png'
+              'res/img/**/*.png',
+              'res/img/**/*.jpeg',
+              'res/img/**/*.jpg'
             ]
           }
         ]

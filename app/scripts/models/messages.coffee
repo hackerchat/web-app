@@ -6,17 +6,26 @@ define [
   "underscore"
 ], (App, Firebase, Backbone, $, _) ->
 
-  Client = Client || {}
+  App.Models ?= {}
+  App.Models.Chat ?= {}
 
-  class Client.BaseModel extends BackBone.Firebase.Model
-    firebase: "hacker-chat-app.firebaseio.com"
+  class App.Models.Chat.Message extends Backbone.Model
+    initialize: (opts) ->
+      if opts.id
+        @firebase = new Backbone.Firebase(App.API_URL + "/messages/#{opts.id}/")
+      else
+        @firebase = new Backbone.Firebase(App.API_URL + "/messages/")
+      # Unlike the other models, we don't delete the ID as we can't
+      # guarantee the uniqueness of any such ID
+      @fetch()
+      this.on('change', this.change, this);
 
-  class Client.Message extends Client.BaseModel
-    initialize: ->
-      @fetched = false
+  class App.Models.Chat.MessageCollection extends Backbone.Collection
+    initialize: (opts) ->
+      if opts.id
+        @firebase = new Backbone.Firebase(App.API_URL + "/chats/#{opts.id}/messages/")
+      else
+        @firebase = new Backbone.Firebase(App.API_URL + "/chats/messages/")
+      @fetch()
 
-  class Client.ChatRoom extends Client.BaseModel
-    initialize: ->
-      @fetched = false
-
-  Client
+  App.Models

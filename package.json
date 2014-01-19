@@ -21,7 +21,8 @@
     "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-sass": "*",
-    "grunt-contrib-clean": "*"
+    "grunt-contrib-clean": "*",
+    "highlight.js": "*"
   },
   "engines": {
     "node": ">=0.8.0"

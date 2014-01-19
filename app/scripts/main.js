@@ -8,7 +8,11 @@ require.config({
     underscore: '../bower_components/underscore/underscore',
     handlebars: '../bower_components/handlebars/handlebars',
     templates: 'templates',
-    text: '../bower_components/requirejs-text/text'
+    text: '../bower_components/requirejs-text/text',
+    firebase: '../bower_components/firebase/firebase',
+    backfire: '../bower_components/backfire/backbone-firebase',
+    'jquery-cookie': '../bower_components/jquery-cookie/jquery.cookie',
+    'highlight': 'lib/highlight.pack'
   },
   'shim': {
     'backbone': {
@@ -18,8 +22,13 @@ require.config({
     'jquery': {
       exports: '$'
     },
+    'jquery-cookie': ['jquery'],
     'underscore': {
       exports: '_'
+    },
+    highlight: {
+      exports: 'Highlight',
+      deps: ['$']
     },
     'marionette': {
       deps: ['backbone'],
@@ -31,6 +40,13 @@ require.config({
     templates: {
       deps: ['handlebars'],
       exports: 'JST'
+    },
+    firebase: {
+      exports: 'Firebase'
+    },
+    backfire: {
+      deps: ['backbone', 'firebase'],
+      exports: 'Backfire'
     }
   }
 });

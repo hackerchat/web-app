@@ -6,12 +6,16 @@ define('app',
    'exports',
    './router',
    './controller',
-   './views'
+   './views',
+   './models',
+   './codeformat'
   ],
-  function (Marionette, Backbone, $, _, exports, Router, Controller, Views) {
+  function (Marionette, Backbone, $, _, exports, Router, Controller, Views, Models, CodeFormater) {
     'use strict';
     var App = window.App = new Marionette.Application();
     App = _.extend(exports, App);
+
+    App.API_URL = "http://hacker-chat-app.firebaseio.com";
 
     App.addInitializer(function (options) {
       var controller, router;
@@ -20,7 +24,9 @@ define('app',
         controller: controller
       });
       Backbone.history.start();
+      App.CustomRouter = router;
     });
+
     return App;
   }
 );
