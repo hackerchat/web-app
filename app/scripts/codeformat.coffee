@@ -19,6 +19,7 @@ define [
 
     # txt = txt.replace(/(\r\n|\n|\r)/gm, "<br/>")
     # txt = txt.replace(/\s/g, "&nbsp;")
+    txt = txt.replace(/</g, "&lt;").replace(/>/g, "&gt;") 
     output = ""
 
 
